@@ -1,0 +1,180 @@
+ .navbar navbar-expand-lg{
+  
+  background-color: black;
+
+}
+
+.form-g{
+  text-align: right;
+  padding-right:30px; 
+  padding-left: 80px;
+}
+
+.row1{
+  background-color: grey;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.aim{
+font-size: 80px;
+opacity: : 0.5;
+color: white;
+padding-left: 20px;
+}
+
+.tree{
+  font-size: 25px;
+}
+
+.col-xs-6{
+  color: white;
+  padding-left: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.col-xs-6 col-sm-6 form1{
+  
+}
+
+small{
+  color: white
+}
+
+.alt1{
+  text-align: center;
+  padding-top: 50px;
+}
+
+.d-flex{
+  display: flex;
+  padding: 10px;
+}
+
+.list-style-none{
+  list-style: none;
+}
+
+
+.flex-justifiy-center{
+  justify-content: center;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
+.img1{
+  padding: 20px;
+  height: 100px;
+  width: 150px;
+}
+
+.alt2{
+text-align: center;
+display: block;
+padding-bottom: 20px;
+}
+.jumbotron{
+  text-align: center;
+}
+
+div.card:hover{
+
+background-color: #e9ecef;
+}
+
+.row3{
+  padding: 70px;
+}
+
+.im{
+  padding-left: 20px;
+}
+.circle-badge{
+  background: black;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  border-radius: 50px;
+  margin-left: 50px;
+}
+
+
+.prob{
+  padding-top: 50px;
+  text-align: center;
+}
+
+.scrollable-row {
+display: flex;
+flex-wrap: nowrap;
+overflow-x: auto;
+margin-right: auto;
+}
+
+.footer{
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+li{
+  list-style-type: none;
+  color: grey;
+}
+
+
+.capbox {
+  background-color: #92D435;
+  border: #92D435 0px solid;
+  border-width: 0px 12px 0px 0px;
+  display: inline-block;
+  *display: inline; zoom: 1; /* FOR IE7-8 */
+  padding: 8px 40px 8px 8px;
+  }
+
+.capbox-inner {
+  font: bold 11px arial, sans-serif;
+  color: #000000;
+  background-color: #DBF3BA;
+  margin: 5px auto 0px auto;
+  padding: 3px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  }
+
+#CaptchaDiv {
+  font: bold 17px verdana, arial, sans-serif;
+  font-style: italic;
+  color: #000000;
+  background-color: #FFFFFF;
+  padding: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  }
+
+#CaptchaInput { margin: 1px 0px 1px 0px; width: 135px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

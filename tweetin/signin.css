@@ -1,0 +1,49 @@
+.navbar-brand {
+ 
+ color:white;
+}
+
+.component {
+	background-image: url("b.jpeg");
+	height: 100vh;
+
+}
+.form-mid{
+	background-color: white;
+	width:50%;
+	margin: auto;
+	opacity: 0.9;
+	padding: 25px;
+}
+.nav-link{
+	color: white;
+}
+	
+ul.navbar-nav.navbar-right{
+	padding-left: 800px;
+}
+
+
+.nav-item1{
+border-style: solid;
+border-color: white;
+}
+
+.form-control:hover{
+	border-color: green;
+
+}
+.one{
+	padding-left: 15%;
+}
+
+
+.form-cap{
+	text-align: center;
+	padding-top: 10px;
+}
+ 
+ small{
+ 	padding-left: 40%;
+ }
+

@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="signup.css" type="text/css">
+
+     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+function validateName() {
+    var x = document.forms["myForm"]["u1"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+}
+</script>
+
+
+
+    <title>Signup Page</title>
+  </head>
+  <body>
+   <div class="container">  
+     <nav class="navbar navbar-expand-lg" style="background-color: black">
+        <a class="navbar-brand" href="#"><img src="images.png" width="30" height="30" alt=""></a>
+        <ul class="navbar-nav">
+          <li class="nav-item ">
+          <a class="nav-link" href="#">Home</a>
+          </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">MarketPlace</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#">Business</a>
+      </li>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </ul>
+    <div class="form-g">
+    <input type="text" class="form-control" placeholder="Search">
+    </div>
+     <ul class="navbar-nav navbar-right">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sign in</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Sign up</a></li>
+    </ul>
+</nav>
+
+<div class="row row1">
+
+  <div class="col-xs-6 col-sm-6">
+     <h1 class="aim">Built For <br>Developers</h1>
+  <p class="tree">
+    GitHub is a development platform inspired by the way you work.
+     From open source to business, you can host and review code,
+      manage projects, and build software alongside millions of other developers.
+    
+  </p>
+  </div>
+
+  <div class="col-xs-6 col-sm-6 form1">
+   <form name="myForm" method="post" onsubmit="return validateName() && checkform(this); ">
+  <div class="form-group">
+    <label for="username">Username:</label>
+    <input type="username" name="u1" class="form-control" placeholder="Pick a Username">
+  </div>
+   <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" class="form-control" placeholder="X@example.com">
+  </div>
+  <div class="form-group">
+    <label for="Password1">Password:</label>
+    <input type="password" class="form-control" placeholder="Password">
+    <small  class="form-text">Use at least one letter, one numeral, and seven characters.
+    </small>
+  </div>
+  <!-- START CAPTCHA -->
+<br>
+<div class="capbox">
+
+<div id="CaptchaDiv"></div>
+
+<div class="capbox-inner">
+Type the above number:<br>
+
+<input type="hidden" id="txtCaptcha">
+<input type="text" name="CaptchaInput" id="CaptchaInput" size="15"><br>
+
+</div>
+</div>
+<br><br>
+<!-- END CAPTCHA -->
+
+  
+  <button type="submit" class="btn btn-success btn-lg">SignUp for Github</button><br>
+
+  <small>By clicking Sign up for GitHub, you agree to our terms of service
+   and privacy statement. We’ll occasionally send you account related emails.</small>
+</form>
+
+<script type="text/javascript">
+
+
+function checkform(theform){
+var why = "";
+
+if(theform.CaptchaInput.value == ""){
+why += "- Please Enter CAPTCHA Code.\n";
+}
+if(theform.CaptchaInput.value != ""){
+if(ValidCaptcha(theform.CaptchaInput.value) == false){
+why += "- The CAPTCHA Code Does Not Match.\n";
+}
+}
+if(why != ""){
+alert(why);
+return false;
+}
+}
+
+var a = Math.ceil(Math.random() * 9)+ '';
+var b = Math.ceil(Math.random() * 9)+ '';
+var c = Math.ceil(Math.random() * 9)+ '';
+var d = Math.ceil(Math.random() * 9)+ '';
+var e = Math.ceil(Math.random() * 9)+ '';
+
+var code = a + b + c + d + e;
+document.getElementById("txtCaptcha").value = code;
+document.getElementById("CaptchaDiv").innerHTML = code;
+
+// Validate input against the generated number
+function ValidCaptcha(){
+var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
+var str2 = removeSpaces(document.getElementById('CaptchaInput').value);
+if (str1 == str2){
+return true;
+}else{
+return false;
+}
+}
+
+// Remove the spaces from the entered and generated code
+function removeSpaces(string){
+return string.split(' ').join('');
+}
+</script>
+
+  </div>
+</div> 
+
+
+<div class= "main">
+  <h3 class="alt1">More than 1.8 million* businesses and organizations use GitHub
+</h3>
+<ul class="d-flex list-style-none flex-justifiy-center flex-wrap">
+  <li><img class="img1" src="Airbnb-symbol.jpg"   alt="airbnb" ></li>
+  <li><img class="img1" src="ibm.png"   alt="ibm" ></li>
+  <li><img class="img1" src="node.png"   alt="node" ></li>
+  <li><img class="img1" src="fb.jpg"   alt="facebook" ></li>
+  <li><img class="img1" src="paypal.jpg"   alt="paypal" ></li>
+  <li><img class="img1" src="sap.png"   alt="sap" ></li>
+   <li><img class="img1" src="paypal.jpg"   alt="paypal" ></li>
+  <li><img class="img1" src="microsoft.png"   alt="microsoft" ></li>
+  <li><img class="img1" src="nasa.png"   alt="nasa" ></li>
+   <li><img class="img1" src="walmart.png"   alt="walmart" ></li>
+  <li><img class="img1" src="spotify.png"   alt="spotify" ></li>
+ 
+
+  </ul>
+  <span class="alt2">*as of april 2018 </span>
+
+</div>
+
+<div class="jumbotron">
+  <h1 class="display-4">A better way to work together!</h1>
+  <p class="lead">GitHub brings teams together to work through problems, move ideas forward,
+   and learn from each other along the way.</p>
+  <hr class="my-4">
+  <p>Github For Teams</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Sign up your team</a>
+  </p>
+</div>
+
+<div class="row row2">
+
+  <div class="col-sm-6">
+    <img src="home.jpeg" height="500" width="400">
+  </div>
+
+  <div class="col-sm-6">
+
+  <div class="card">
+  <div class="card-body">
+    <h3>Write a better code</h3>
+    <p>Collaborations make perfect.The conversation
+      and code reviews that happen in pull requests
+      help your team share the weight and improve the 
+    software you build</p>
+  </div>
+</div>
+
+ <div class="card">
+  <div class="card-body">
+    <h3>Manage Your Chaos</h3>
+    <p>Take a deep breath.On Github,project management
+      happens in issues and projects,right alongside your
+      code.All you have to do is mention a teammate to 
+      get them involved.
+    </p>
+  </div>
+</div>
+
+ <div class="card">
+  <div class="card-body">
+    <h3>Find the right tools</h3>
+    <p>Browse and buy apps from github marketplace with
+      your Github account.Find the tools you like
+      or discover new favourites-then start using them in 
+      minutes.</p>
+  </div>
+</div>
+
+
+   </div>
+</div>
+
+
+<div class="row row3">
+  <div class="col-sm-6">
+   <h4>Code Security</h4>
+   <p>Prevent problems before they happen. Protected branches, signed commits, and required status checks protect your work and help you maintain a high standard for your code.</p>
+
+    <h4>Access controlled</h4>
+    <p>Encourage teams to work together while limiting access to those who need it with granular permissions and authentication through SAML/SSO and LDAP.</p>
+  </div>
+
+  <div class="col-sm-6">
+
+    <img src="home-illo-business.png" class="im" height="250" width="500">
+  </div>
+</div>
+
+<div class="row row4">
+ <div class="clustor d-flex flex-wrap flex-justifiy-center">
+  <div class="circle-badge">
+    <img src="Slack_Icon.png"  height="100px" width="100px">
+  </div>
+  <div class="circle-badge">
+    <img src="zen.png"  height="70px" width="70px">
+  </div>
+  <div class="circle-badge">
+    <img src="circle.png"  height="52px" width="52px">
+  </div>
+  <div class="circle-badge">
+    <img src="circle.png"  height="52px" width="52px">
+  </div>
+  <div class="circle-badge">
+    <img src="circle.png"  height="52px" width="52px">
+  </div>
+
+  <p class="prob">Sometimes, there’s more than one tool for the job. Why not try something new?<br>
+  <a href="#">Browse Github Marketplace</a>
+</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="jumbotron">
+    Community
+    <h1>Welcome Home ,Developers</h1>
+    <p class="lead">GitHub is home to the world’s largest community of developers and their projects...</p>
+  </div>
+
+  <div class="row scrollable-row">
+    <div class="col">
+    <img src="ariya.png" height="200px" width="200px"></div>
+    <div class="col">
+    <h3>Ariya hidayat</h3>
+    <p>Phantom Js maintainor </p></div>
+
+    <div class="col">
+    <img src="mailchimp.png" height="200px" width="200px"></div>
+    <div class="col">
+    <h3>Mail Chimp</h3>
+    <p>Marketing Customer</p></div>
+
+    <div class="col">
+    <img src="kris-nova.png" height="200px" width="200px"></div>
+    <div class="col">
+    <h3>Kris Nova</h3>
+    <p>kops maintainor</p></div>
+
+    <div class="col">
+    <img src="evan-you.png" height="200px" width="200px"></div>
+    <div class="col">
+    <h3>Evan You</h3>
+    <p>Vue maintainor </p></div>
+
+    <div class="col">
+    <img src="mapbox.png" height="200px" width="200px"></div>
+    <div class="col">
+    <h3>MapBox</h3>
+    <p>Software Customer </p></div>
+    
+ </div>
+
+ <div class="row footer">
+ <div class="col"> <h3>GitHub</h3><p>&copy;2018</p>  </div>
+  <div class="col"><h4>Features</h4>
+    <li>Code Review</li>
+    <li>Project Management</li>
+    <li>Community</li>
+    <li>Documentation</li>
+  </div>
+  <div class="col"><h4>Platform</h4>
+     <li>Atom</li>
+    <li>Electron</li>
+    <li>Github Desktop</li>
+    <li>Developer API</li>
+ </div>
+  <div class="col"><h4>Community</h4>
+    <li>Personal</li>
+    <li>Open Source</li>
+    <li>Business</li>
+    <li>Education</li>
+    <li>Customers</li>
+    <li>Partners</li>
+    <li>Sponsorships</li>
+  </div>
+  <div class="col"><h4>Company</h4>
+    <li>About</li>
+    <li>Blog</li>
+    <li>Careers</li>
+    <li>Press</li>
+    <li>Shop</li>
+
+  </div>
+ <div class="col"><h4>Resources</h4>
+   <li>Contact Github</li>
+    <li>Community Forum</li>
+    <li>Help</li>
+    <li>Status</li>
+    <li>Terms</li>
+    <li>Security</li>
+    <li>Privacy</li>
+ </div>
+ </div>
+
+
+</div>
+  
+   
+  </body>
+</html>
